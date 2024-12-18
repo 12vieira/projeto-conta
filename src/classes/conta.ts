@@ -28,7 +28,7 @@ export class Conta{
         if(tamanho < 3){
             throw new Error("titular inválido");
         }
-        this._titular = titular.trim().toUpperCase();
+        this._titular = titular.toUpperCase();
     }
     public set saldo(saldo: number){
         const valor = saldo;
@@ -58,7 +58,7 @@ export class Conta{
         }
 
     }
-    public tranferir(contaDestino: Conta, valor: number): number{
+    public transferir(contaDestino: Conta, valor: number): number{
         this.sacar(valor);
         contaDestino.depositar(valor);
         return this._saldo;
